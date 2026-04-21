@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>Welcome to ACEest Dashboard</h2>
+    <p>Hello, {{ username }}!</p>
+    <p>Your role is: {{ role }}</p>
+
+    <hr>
+
+    <a href="{{ url_for('add_client') }}">Add Client</a>
+    <br><br>
+    <a href="{{ url_for('clients') }}">View Clients</a>
+    <br><br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

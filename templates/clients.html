@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clients</title>
+</head>
+<body>
+    <h2>Client List</h2>
+
+    {% if clients %}
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th>Program</th>
+            </tr>
+
+            {% for client in clients %}
+            <tr>
+                <td>{{ client["id"] }}</td>
+                <td>{{ client["name"] }}</td>
+                <td>{{ client["age"] }}</td>
+                <td>{{ client["height"] }}</td>
+                <td>{{ client["weight"] }}</td>
+                <td>{{ client["program"] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No clients found.</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('add_client') }}">Add New Client</a>
+    <br><br>
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    <br><br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

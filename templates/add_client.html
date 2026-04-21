@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Client</title>
+</head>
+<body>
+    <h2>Add Client</h2>
+
+    {% if message %}
+        <p style="color:green;">{{ message }}</p>
+    {% endif %}
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <label>Name:</label><br>
+        <input type="text" name="name"><br><br>
+
+        <label>Age:</label><br>
+        <input type="number" name="age"><br><br>
+
+        <label>Height (cm):</label><br>
+        <input type="number" step="0.01" name="height"><br><br>
+
+        <label>Weight (kg):</label><br>
+        <input type="number" step="0.01" name="weight"><br><br>
+
+        <label>Program:</label><br>
+        <select name="program">
+            <option value="">Select Program</option>
+            <option value="Fat Loss">Fat Loss</option>
+            <option value="Muscle Gain">Muscle Gain</option>
+            <option value="Beginner">Beginner</option>
+        </select><br><br>
+
+        <button type="submit">Save Client</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('clients') }}">View Clients</a>
+    <br><br>
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    <br><br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
